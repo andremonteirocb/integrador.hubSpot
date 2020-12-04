@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A629A7D8-1339-43EC-B258-87723B1ADDEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Integrador.HubSpot</RootNamespace>
+    <AssemblyName>Integrador.HubSpot</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enuns\Enumeradores.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="HubSpot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rest\Base\RestBase.cs" />
+    <Compile Include="Rest\Models\Delete\LineItemModelDelete.cs" />
+    <Compile Include="Rest\Models\Delete\ProductModelDelete.cs" />
+    <Compile Include="Rest\Models\Get\AssociationModelGet.cs" />
+    <Compile Include="Rest\Models\Get\EngagementModelGet.cs" />
+    <Compile Include="Rest\Models\Get\WebHookModelGet.cs" />
+    <Compile Include="Rest\Models\Get\FormModelGet.cs" />
+    <Compile Include="Rest\Models\Get\LineItemObjectModelGet.cs" />
+    <Compile Include="Rest\Models\Get\ProductObjectModelGet.cs" />
+    <Compile Include="Rest\Models\Get\ProductModelGet.cs" />
+    <Compile Include="Rest\Models\Get\GroupModelGet.cs" />
+    <Compile Include="Rest\Models\Get\IntegrationsModelGet.cs" />
+    <Compile Include="Rest\Models\ContextForm.cs" />
+    <Compile Include="Rest\Models\ModelError.cs" />
+    <Compile Include="Rest\Models\DadosIntegracao.cs" />
+    <Compile Include="Rest\Models\Delete\ContactModelDelete.cs" />
+    <Compile Include="Rest\Models\Get\ContactModelGet.cs" />
+    <Compile Include="Rest\Models\Get\DealModelGet.cs" />
+    <Compile Include="Rest\Models\Get\PipelineStageModelGet.cs" />
+    <Compile Include="Rest\Models\Get\PipelineStagesModelGet.cs" />
+    <Compile Include="Rest\Models\Post\AssociationModelPost.cs" />
+    <Compile Include="Rest\Models\Post\EngagementModelPost.cs" />
+    <Compile Include="Rest\Models\Post\FormModelPost.cs" />
+    <Compile Include="Rest\Models\Post\ModelPostInArray.cs" />
+    <Compile Include="Rest\Models\Post\ContactModelPost.cs" />
+    <Compile Include="Rest\Models\Post\DealModelPost.cs" />
+    <Compile Include="Rest\Models\Associations.cs" />
+    <Compile Include="Rest\Models\PropertyProp.cs" />
+    <Compile Include="Rest\Models\PropertyValue.cs" />
+    <Compile Include="Rest\Models\PropertyName.cs" />
+    <Compile Include="Rest\Models\AbstractModel.cs" />
+    <Compile Include="Rest\Models\Delete\DealModelDelete.cs" />
+    <Compile Include="Rest\Models\Get\DealPropertyModelGet.cs" />
+    <Compile Include="Rest\Models\Get\PipelineModelGet.cs" />
+    <Compile Include="Rest\Models\Put\DealModelPut.cs" />
+    <Compile Include="Rest\Models\Post\DealPropertyModelPost.cs" />
+    <Compile Include="Rest\RestAssociation.cs" />
+    <Compile Include="Rest\RestEngagement.cs" />
+    <Compile Include="Rest\RestForm.cs" />
+    <Compile Include="Rest\RestLineItem.cs" />
+    <Compile Include="Rest\RestProduct.cs" />
+    <Compile Include="Rest\RestIntegrations.cs" />
+    <Compile Include="Rest\RestContact.cs" />
+    <Compile Include="Rest\RestDeal.cs" />
+    <Compile Include="Rest\RestPipeline.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
