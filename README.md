@@ -129,3 +129,137 @@ using(var hubspot = new HubSpot())
   var form = _hubSpot.Form.EnviarFormulario(dados, skipValidation);
 }
 ```
+
+### Obter propriedades do contato
+```c#
+using(var hubspot = new HubSpot())
+{
+  //var groupId = "contactinformation";
+  var propriedades = _hubSpot.Contact.RecuperarTodasAsPropriedades(groupId);
+}
+```
+
+### Obter contado por e-mail
+```c#
+using(var hubspot = new HubSpot())
+{
+  var contato = _hubSpot.Contact.RecuperarContatoByEmail("email");
+}
+```
+
+### Obter contado por id
+```c#
+using(var hubspot = new HubSpot())
+{
+  var contato = _hubSpot.Contact.RecuperarContatoByEmail(contactId);
+}
+```
+
+### Criar ou atualizar um contato
+```c#
+using(var hubspot = new HubSpot())
+{
+  var dados = new DadosIntegracao
+  {
+      Inscricao = new DadosInscricao
+      {
+          Email = "email_usuario"
+      },
+      Contact = new DadosContact
+      {
+          Propriedades = new List<Propriedade> 
+          {
+              new Rest.Models.Propriedade { Chave = "chave", Valor = "valor" }
+          }
+      }
+  };
+  var contato = _hubSpot.Contact.CriarOuAtualizarContact(dados);
+}
+```
+
+### Deletar contato
+```c#
+using(var hubspot = new HubSpot())
+{
+  var contato = _hubSpot.Contact.DeletarContato(contactId);
+}
+```
+
+### Obter propriedades do deal
+```c#
+using(var hubspot = new HubSpot())
+{
+  //var groupId = "dealinformation";
+  //var incluirPropriedades = true;
+  var propriedades = _hubSpot.Deal.RecuperarTodasAsPropriedades(groupId, incluirPropriedades);
+}
+```
+
+### Obter deal por id
+```c#
+using(var hubspot = new HubSpot())
+{
+  var deal = _hubSpot.Deal.RecuperarDeal(dealId);
+}
+```
+
+### Criar um deal
+```c#
+using(var hubspot = new HubSpot())
+{
+  var dados = new DadosIntegracao
+  {
+      Inscricao = new DadosInscricao
+      {
+          Email = "email_usuario"
+      },
+      Contact = new DadosContact
+      {
+          ContactId = 11111, //contactId
+          Propriedades = new List<Propriedade> 
+          {
+              new Rest.Models.Propriedade { Chave = "chave", Valor = "valor" }
+          }
+      },
+      Deal = new DadosDeal
+      {
+          Propriedades = new List<Propriedade> 
+          {
+              new Rest.Models.Propriedade { Chave = "chave", Valor = "valor" }
+          }
+      }
+  };
+  var deal = _hubSpot.Deal.CriarDeal(dados);
+}
+```
+
+### Atualizar um deal
+```c#
+using(var hubspot = new HubSpot())
+{
+  var dados = new DadosIntegracao
+  {
+      Inscricao = new DadosInscricao
+      {
+          Email = "email_usuario"
+      },
+      Deal = new DadosDeal
+      {
+          DealId = 1323112, //dealId
+          Propriedades = new List<Propriedade> 
+          {
+              new Rest.Models.Propriedade { Chave = "chave", Valor = "novo_valor" }
+          }
+      }
+  };
+  var deal = _hubSpot.Deal.CriarDeal(dados);
+}
+```
+
+### Deletar deal
+```c#
+using(var hubspot = new HubSpot())
+{
+  var deal = _hubSpot.Deal.DeletarDeal(dealId);
+}
+```
