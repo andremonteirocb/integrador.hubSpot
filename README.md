@@ -2,7 +2,8 @@
 .NET Class Library for integration with HUBSPOT API <br />
 .Net Framework 4.6.1
 
-## Chaves
+## Configuração
+### Web.config
 ```c#
   <add key="user:hapikey" value="_hapikey_do_cliente_hubspot" />
   <add key="app:urlforms" value="https://api.hsforms.com" />
